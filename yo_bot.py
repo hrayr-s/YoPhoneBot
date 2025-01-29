@@ -84,6 +84,9 @@ class YoBot(object):
             if self.debug:
                 print(updates)
 
+            if not updates.success:
+                yield updates
+
             if not updates.data:
                 # if no data Yield None to not interrupt the iterator
                 yield None
